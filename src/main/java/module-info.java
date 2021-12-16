@@ -3,6 +3,6 @@ module com.example.internetpackageapp {
     requires javafx.fxml;
 
 
-    opens com.example.internetpackageapp to javafx.fxml;
-    exports com.example.internetpackageapp;
+    opens com.internetpackageapp to javafx.fxml;
+    exports com.internetpackageapp;
 }

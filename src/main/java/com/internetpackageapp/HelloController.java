@@ -1,4 +1,4 @@
-package com.example.internetpackageapp;
+package com.internetpackageapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
