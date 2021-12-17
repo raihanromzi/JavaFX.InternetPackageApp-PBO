@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.Controller">
    <right>
       <ImageView fitHeight="500.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -46,7 +46,7 @@
                   <Font name="Roboto Bold" size="40.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="32.0" layoutY="341.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="334.0" />
+            <ChoiceBox fx:id="metodePembayaranChoiceBox" layoutX="32.0" layoutY="341.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="334.0" />
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="260.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="238.0" AnchorPane.topAnchor="100.0">
                <image>
                   <Image url="@Image/calendar.png" />
@@ -67,22 +67,22 @@
                   <Image url="@Image/message.png" />
                </image>
             </ImageView>
-            <Label layoutX="307.0" layoutY="102.0" text="1 hari" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="101.0">
+            <Label fx:id="masaAktifLabel" layoutX="307.0" layoutY="102.0" text="1 hari" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="101.0">
                <font>
                   <Font name="Roboto Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="307.0" layoutY="134.0" text="1 GB" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="133.0">
+            <Label fx:id="jumlahKuotaLabel" layoutX="307.0" layoutY="134.0" text="1 GB" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="133.0">
                <font>
                   <Font name="Roboto Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="307.0" layoutY="166.0" text="10 menit" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="165.0">
+            <Label fx:id="teleponLabel" layoutX="307.0" layoutY="166.0" text="10 menit" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="165.0">
                <font>
                   <Font name="Roboto Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="307.0" layoutY="201.0" text="10" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="197.0">
+            <Label fx:id="smsLabel" layoutX="307.0" layoutY="201.0" text="10" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="197.0">
                <font>
                   <Font name="Roboto Bold" size="16.0" />
                </font>
@@ -113,7 +113,7 @@
                   <Font name="Roboto" size="16.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
+            <JFXButton fx:id="backPaymentButton" buttonType="RAISED" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -122,7 +122,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="436.0" prefHeight="32.0" prefWidth="414.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 6;" text="Confrim Payment" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="414.0">
+            <JFXButton fx:id="confirmPaymentButton" buttonType="RAISED" layoutX="31.0" layoutY="436.0" prefHeight="32.0" prefWidth="414.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 6;" text="Confrim Payment" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="414.0">
                <font>
                   <Font name="Roboto Bold" size="16.0" />
                </font>

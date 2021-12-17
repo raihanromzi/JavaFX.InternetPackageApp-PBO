@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.Controller">
    <children>
       <ImageView fitHeight="280.0" fitWidth="280.0" layoutX="244.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="16.0">
          <image>
@@ -29,7 +29,7 @@
             <Font name="Roboto" size="14.0" />
          </font>
       </Label>
-      <JFXButton layoutX="300.0" layoutY="461.0" prefHeight="32.0" prefWidth="232.0" style="-fx-background-color: #0063FF #0063FF;" text="Back To Home" textFill="WHITE" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="416.0">
+      <JFXButton fx:id="backToHomeButton" layoutX="300.0" layoutY="461.0" prefHeight="32.0" prefWidth="232.0" style="-fx-background-color: #0063FF #0063FF;" text="Back To Home" textFill="WHITE" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="416.0">
          <font>
             <Font name="Roboto Bold" size="14.0" />
          </font>
