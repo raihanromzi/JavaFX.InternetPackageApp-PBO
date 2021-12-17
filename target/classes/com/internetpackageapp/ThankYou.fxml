@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -30,10 +29,10 @@
             <Font name="Roboto" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="323.0" layoutY="424.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="232.0" style="-fx-background-color: #0063FF;" text="Back To Home" textFill="WHITE" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="416.0">
+      <JFXButton layoutX="300.0" layoutY="461.0" prefHeight="32.0" prefWidth="232.0" style="-fx-background-color: #0063FF #0063FF;" text="Back To Home" textFill="WHITE" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="416.0">
          <font>
             <Font name="Roboto Bold" size="14.0" />
          </font>
-      </Button>
+      </JFXButton>
    </children>
 </AnchorPane>
