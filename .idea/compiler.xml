@@ -16,7 +16,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value=" (package javafx.application is declared in module javafx.graphics, but module com.example.javafx does not read it) " />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="InternetPackageApp" options="--add-modules java.base --add-exports java.desktop/com.apple.eawt=com.example.internetpackageapp" />
+      <module name="InternetPackageApp" options="" />
     </option>
   </component>
 </project>

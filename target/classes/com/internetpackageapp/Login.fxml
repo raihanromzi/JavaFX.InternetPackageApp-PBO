@@ -66,7 +66,7 @@
                   <Font name="Roboto" size="12.0" />
                </font>
             </PasswordField>
-            <JFXButton fx:id="signInButton" buttonType="RAISED" layoutX="32.0" layoutY="402.0" onAction="#LoginToHome" prefHeight="32.0" prefWidth="232.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF;" text="Sign in" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="329.0">
+            <JFXButton fx:id="signInButton" buttonType="RAISED" layoutX="32.0" layoutY="402.0" onAction="#LoginButtonOnAction" prefHeight="32.0" prefWidth="232.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF;" text="Sign in" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="329.0">
                <font>
                   <Font name="Roboto Bold" size="14.0" />
                </font>
@@ -76,7 +76,7 @@
                   <Font name="Roboto Bold" size="12.0" />
                </font>
             </JFXButton>
-            <Label fx:id="invalidLoginLabel" layoutX="51.0" layoutY="298.0" prefHeight="17.0" prefWidth="195.0" text="Invalid Phone Number or Password" textFill="#b00020" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="298.0">
+            <Label fx:id="loginStatusLabel" alignment="CENTER" layoutX="51.0" layoutY="298.0" prefHeight="17.0" prefWidth="195.0" textFill="#b00020" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="298.0">
                <font>
                   <Font name="Roboto" size="12.0" />
                </font>

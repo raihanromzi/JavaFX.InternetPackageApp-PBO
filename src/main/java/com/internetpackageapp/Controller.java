@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -12,8 +13,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 
 public class Controller {
@@ -31,15 +35,17 @@ public class Controller {
     private TextField phoneNumberTextField, fullNameTextField, addressTextField, phoneNumberRegisterTextField;
 
     @FXML
-    private Label registerLabel, jumlahKuotaLabel, masaAktifLabel, smsLabel, teleponLabel, invalidLoginLabel;
+    private Label registerLabel, jumlahKuotaLabel, masaAktifLabel, smsLabel, teleponLabel, loginStatusLabel, PhoneNumberLabel;
 
     @FXML
     private JFXRadioButton linkajaRadioButton, gopayRadioButton, danaRadioButton, ovoRadioButton;
 
-    public void LoginToHome() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home.fxml")));
-        Stage window = (Stage) signInButton.getScene().getWindow();
-        window.setScene(new Scene(root, 700, 500));
+    public void LoginButtonOnAction(ActionEvent event) throws IOException {
+        loginStatusLabel.setText("Please Enter Correctly");
+
+//        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home.fxml")));
+//        Stage window = (Stage) signInButton.getScene().getWindow();
+//        window.setScene(new Scene(root, 700, 500));
     }
 
     public void LoginToRegister() throws IOException {
@@ -143,5 +149,6 @@ public class Controller {
         Stage window = (Stage) backToHomeButton.getScene().getWindow();
         window.setScene(new Scene(root, 700, 500));
     }
+
 
 }
