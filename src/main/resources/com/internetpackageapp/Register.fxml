@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.Controller">
    <left>
       <AnchorPane prefHeight="500.0" prefWidth="404.0" BorderPane.alignment="CENTER">
          <children>
@@ -31,16 +31,6 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="644.0" prefWidth="278.0">
                      <children>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
-                           <image>
-                              <Image url="@Image/Logo%20Telkom.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="63.0" layoutY="24.0" text="Beli Kuota Yuk!" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="37.0">
-                           <font>
-                              <Font name="Roboto Bold" size="12.0" />
-                           </font>
-                        </Label>
                         <Label layoutX="26.0" layoutY="57.0" text="Hi! Welcome to App" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="88.0">
                            <font>
                               <Font name="Roboto Bold" size="20.0" />
@@ -97,10 +87,19 @@
                               <Font name="Roboto" size="10.0" />
                            </font>
                         </Label>
-                        <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="32.0" layoutY="456.0" prefHeight="32.0" prefWidth="232.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF;" text="Register" textFill="WHITE">
+                        <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="32.0" layoutY="456.0" onAction="#RegisterToHome" prefHeight="32.0" prefWidth="232.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF;" text="Register" textFill="WHITE">
                            <font>
                               <Font name="Roboto Bold" size="14.0" />
                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="backOnRegisterButton" layoutX="28.0" layoutY="28.0" onAction="#RegisterToLogin" prefHeight="32.0" prefWidth="0.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/arrow-left-line.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                      </children>
                   </AnchorPane>

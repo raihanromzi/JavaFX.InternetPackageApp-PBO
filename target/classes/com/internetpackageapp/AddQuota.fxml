@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.Controller">
    <right>
       <ImageView fitHeight="500.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -65,27 +65,27 @@
                   <Font name="Roboto Bold" size="14.0" />
                </font>
             </Button>
-            <JFXButton fx:id="button1GB" buttonType="RAISED" layoutX="150.0" layoutY="178.0" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
+            <JFXButton fx:id="buy1GBButton" buttonType="RAISED" layoutX="150.0" layoutY="178.0" onAction="#AddQuota1GB" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
                <font>
                   <Font name="Roboto Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="button5GB" buttonType="RAISED" layoutX="372.0" layoutY="178.0" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
+            <JFXButton fx:id="buy5GBButton" buttonType="RAISED" layoutX="372.0" layoutY="178.0" onAction="#AddQuota5GB" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
                <font>
                   <Font name="Roboto Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="button10GB" buttonType="RAISED" layoutX="150.0" layoutY="342.0" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
+            <JFXButton fx:id="buy10GBButton" buttonType="RAISED" layoutX="150.0" layoutY="342.0" onAction="#AddQuota10GB" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
                <font>
                   <Font name="Roboto Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="button20GB" buttonType="RAISED" layoutX="372.0" layoutY="342.0" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
+            <JFXButton fx:id="buy20GBButton" buttonType="RAISED" layoutX="372.0" layoutY="342.0" onAction="#AddQuota20GB" prefHeight="32.0" prefWidth="56.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 24;" text="Buy" textFill="WHITE">
                <font>
                   <Font name="Roboto Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="33.0" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
+            <JFXButton fx:id="backOnAddQuotaButton" buttonType="RAISED" layoutX="32.0" layoutY="33.0" onAction="#AddQuotaToHome" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
