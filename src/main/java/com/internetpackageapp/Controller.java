@@ -31,7 +31,7 @@ public class Controller {
     private TextField phoneNumberTextField, fullNameTextField, addressTextField, phoneNumberRegisterTextField;
 
     @FXML
-    private Label registerLabel, jumlahKuotaLabel, masaAktifLabel, smsLabel, teleponLabel;
+    private Label registerLabel, jumlahKuotaLabel, masaAktifLabel, smsLabel, teleponLabel, invalidLoginLabel;
 
     @FXML
     private JFXRadioButton linkajaRadioButton, gopayRadioButton, danaRadioButton, ovoRadioButton;
