@@ -15,7 +15,7 @@ public class App extends Application {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login.fxml")));
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("Tugas Besar PBO IF-43-08");
+            stage.setTitle("Log in");
             stage.setResizable(false);
             stage.show();
         } catch (Exception e){
