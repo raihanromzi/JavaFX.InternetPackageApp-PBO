@@ -28,21 +28,6 @@ public class PaymentController implements Initializable {
     @FXML
     private JFXButton confirmPayment20GBButton;
 
-    @FXML
-    private JFXRadioButton danaRadioButton;
-
-    @FXML
-    private JFXRadioButton gopayRadioButton;
-
-    @FXML
-    private JFXRadioButton linkajaRadioButton;
-
-    @FXML
-    private ToggleGroup metode;
-
-    @FXML
-    private JFXRadioButton ovoRadioButton;
-    private HomeController homeController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

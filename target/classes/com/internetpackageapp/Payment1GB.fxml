@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.PaymentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.PaymentController">
    <right>
       <ImageView fitHeight="500.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -87,12 +84,6 @@
                   <Font name="Roboto Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="265.0" text="Metode Pembayaran" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="290.0">
-               <font>
-                  <Font name="Roboto Bold" size="20.0" />
-               </font>
-            </Label>
-            <Line endX="317.0" layoutX="132.5" layoutY="260.5" startX="-100.0" stroke="#c2c2c2" strokeWidth="0.5" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="260.0" />
             <Label layoutX="277.0" layoutY="102.0" text="Masa Aktif" AnchorPane.leftAnchor="278.0" AnchorPane.topAnchor="101.0">
                <font>
                   <Font name="Roboto" size="16.0" />
@@ -122,18 +113,11 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="confirmPayment1GBButton" buttonType="RAISED" layoutX="31.0" layoutY="436.0" prefHeight="32.0" prefWidth="414.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 6;" text="Confrim Payment" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="404.0">
+            <JFXButton fx:id="confirmPayment1GBButton" buttonType="RAISED" layoutX="31.0" layoutY="282.0" prefHeight="32.0" prefWidth="414.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 6;" text="Confrim Payment" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="258.0">
                <font>
                   <Font name="Roboto Bold" size="16.0" />
                </font>
             </JFXButton>
-            <JFXRadioButton fx:id="ovoRadioButton" layoutX="32.0" layoutY="351.0" text="OVO" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="342.0">
-               <toggleGroup>
-                  <ToggleGroup fx:id="metode" />
-               </toggleGroup></JFXRadioButton>
-            <JFXRadioButton fx:id="gopayRadioButton" layoutX="102.0" layoutY="351.0" text="Gopay" toggleGroup="$metode" AnchorPane.leftAnchor="118.0" AnchorPane.topAnchor="342.0" />
-            <JFXRadioButton fx:id="danaRadioButton" layoutX="182.0" layoutY="351.0" text="Dana" toggleGroup="$metode" AnchorPane.leftAnchor="204.0" AnchorPane.topAnchor="342.0" />
-            <JFXRadioButton fx:id="linkajaRadioButton" layoutX="250.0" layoutY="351.0" text="LinkAja" toggleGroup="$metode" AnchorPane.leftAnchor="290.0" AnchorPane.topAnchor="342.0" />
          </children>
       </AnchorPane>
    </left>
