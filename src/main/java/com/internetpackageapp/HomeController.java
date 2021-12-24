@@ -28,28 +28,7 @@ public class HomeController implements Initializable {
     private Label QuotaLabel;
 
     @FXML
-    private JFXButton buy10GBHomeButton;
-
-    @FXML
-    private JFXButton buy20GBHomeButton;
-
-    @FXML
     private JFXButton refreshQuotaButton;
-
-    @FXML
-    void HomePromo10GB(ActionEvent event) {
-
-    }
-
-    @FXML
-    void HomePromo20GB(ActionEvent event) {
-
-    }
-
-    @FXML
-    void HomeToAddQuota(ActionEvent event) {
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -60,6 +39,13 @@ public class HomeController implements Initializable {
                 Database.changeScene(event, "Login.fxml", "Log in!", null, null, null);
             }
         });
+
+        addQuotaButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Database.changeScene(event,"AddQuota.fxml", "Add Quota!", null, null, null);
+            }
+        });
     }
 
     public void setUserInformation(String full_name, String phone_number, Integer kuota) {
@@ -67,4 +53,5 @@ public class HomeController implements Initializable {
         PhoneNumberLabel.setText(phone_number);
         QuotaLabel.setText(kuota + "GB");
     }
+
 }

@@ -113,7 +113,7 @@
                   <Font name="Roboto" size="16.0" />
                </font>
             </Label>
-            <JFXButton fx:id="backPaymentButton" buttonType="RAISED" onAction="#PaymentToAddQuota" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
+            <JFXButton fx:id="backPaymentButton" buttonType="RAISED" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -122,7 +122,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="confirmPayment5GBButton" buttonType="RAISED" layoutX="31.0" layoutY="436.0" onAction="#ConfirmPayment5GB" prefHeight="32.0" prefWidth="414.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 6;" text="Confrim Payment" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="404.0">
+            <JFXButton fx:id="confirmPayment5GBButton" buttonType="RAISED" layoutX="31.0" layoutY="436.0" prefHeight="32.0" prefWidth="414.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 6;" text="Confrim Payment" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="404.0">
                <font>
                   <Font name="Roboto Bold" size="16.0" />
                </font>

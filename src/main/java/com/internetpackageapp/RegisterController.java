@@ -49,7 +49,8 @@ public class RegisterController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if(!addressTextField.getText().trim().isEmpty() && !fullNameTextField.getText().trim().isEmpty()
-                        && !passwordRegisterTextField.getText().trim().isEmpty() && phoneNumberRegisterTextField.getText().trim().isEmpty()){
+                        && !passwordRegisterTextField.getText().trim().isEmpty() && !phoneNumberRegisterTextField.getText().trim().isEmpty()){
+
                     Database.RegisterUser(event, fullNameTextField.getText(), addressTextField.getText(), phoneNumberRegisterTextField.getText(), passwordRegisterTextField.getText(), 0);
                 } else {
                     System.out.println("Please fill All the Information!");
@@ -57,8 +58,7 @@ public class RegisterController implements Initializable {
                     alert.setContentText("Please fill All the Information!");
                     alert.show();
                 }
-
-
+                
             }
         });
 

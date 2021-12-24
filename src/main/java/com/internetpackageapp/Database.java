@@ -124,19 +124,19 @@ public class Database {
             preparedStatement.setString(1, phone_number);
             resultSet = preparedStatement.executeQuery();
 
-            if(!resultSet.isBeforeFirst()){
+            if (!resultSet.isBeforeFirst()) {
                 System.out.println("Phone Number not found!");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Incorrect Phone Number!");
                 alert.show();
             } else {
-                while (resultSet.next()){
+                while (resultSet.next()) {
                     String retrievedPassword = resultSet.getString("password");
                     String retrievedFullName = resultSet.getString("full_name");
                     int retrievedKuota = resultSet.getInt("kuota");
 
-                    if(retrievedPassword.equals(password)){
-                        changeScene(event,"Home.fxml","Welcome!",retrievedFullName,phone_number,retrievedKuota);
+                    if (retrievedPassword.equals(password)) {
+                        changeScene(event, "Home.fxml", "Welcome!", retrievedFullName, phone_number, retrievedKuota);
                     } else {
                         System.out.println("Password did not match");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -151,7 +151,7 @@ public class Database {
             e.printStackTrace();
         } finally {
 
-            if(resultSet != null) {
+            if (resultSet != null) {
                 try {
                     resultSet.close();
                 } catch (SQLException e) {
@@ -159,7 +159,7 @@ public class Database {
                 }
             }
 
-            if(preparedStatement != null) {
+            if (preparedStatement != null) {
                 try {
                     preparedStatement.close();
                 } catch (SQLException e) {
@@ -167,7 +167,7 @@ public class Database {
                 }
             }
 
-            if(connection != null) {
+            if (connection != null) {
                 try {
                     connection.close();
                 } catch (SQLException e) {
@@ -175,7 +175,63 @@ public class Database {
                 }
             }
 
+        }
+    }
 
+
+        public static void addQuota(ActionEvent event, String phone_number, Integer kuota, Integer AddedKuota){
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            preparedStatement = connection.prepareStatement("UPDATE users SET kuota = ? + ? WHERE phone_number = ?");
+            preparedStatement.setInt(1, kuota);
+            preparedStatement.setInt(2, AddedKuota);
+            preparedStatement.setString(3, phone_number);
+            resultSet = preparedStatement.executeQuery();
+
+            if (!resultSet.isBeforeFirst()){
+                System.out.println("Cannot add quota!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Cannot add quota!");
+                alert.show();
+            } else {
+                String retrievedFullName = resultSet.getString("full_name");
+                int retrievedKuota = resultSet.getInt("kuota");
+
+                changeScene(event, "Home.fxml", "Home!", retrievedFullName, phone_number, retrievedKuota);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
     }

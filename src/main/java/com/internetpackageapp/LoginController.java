@@ -26,11 +26,6 @@ public class LoginController implements Initializable {
     @FXML
     private JFXButton signInButton;
 
-    @FXML
-    void LoginButtonOnAction(ActionEvent event) {
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
