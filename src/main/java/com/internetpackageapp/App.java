@@ -16,7 +16,6 @@ public class App extends Application {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Log in");
-            stage.setResizable(false);
             stage.show();
         } catch (Exception e){
             e.printStackTrace();

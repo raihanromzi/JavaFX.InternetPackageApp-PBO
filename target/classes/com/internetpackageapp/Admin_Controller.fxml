@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="800.0" minHeight="499.0" minWidth="700.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.AdminController">
+   <children>
+      <Label layoutX="14.0" layoutY="22.0" text="Hi, " AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="22.0">
+         <font>
+            <Font name="Roboto" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="adminNameLabel" layoutX="37.0" layoutY="19.0" text="Admin" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="19.0">
+         <font>
+            <Font name="Roboto Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="LogOutButton" layoutX="614.0" layoutY="17.0" style="-fx-background-color: #EEECFD #EEECFD #EEECFD #EEECFD; -fx-background-radius: 500;" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="17.0">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <VBox layoutX="14.0" layoutY="55.0" prefHeight="382.0" prefWidth="221.0" spacing="8.0">
+         <children>
+            <Label text="ID">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idTextField" prefHeight="40.0" prefWidth="232.0">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font>
+            </TextField>
+            <Label text="Full Name">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="fullNameTextField" layoutX="10.0" layoutY="27.0" prefHeight="40.0" prefWidth="232.0">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font>
+            </TextField>
+            <Label text="Address">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addressTextField" layoutX="10.0" layoutY="84.0" prefHeight="40.0" prefWidth="232.0">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font>
+            </TextField>
+            <Label text="Phone Number">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="phoneNumberTextField" layoutX="10.0" layoutY="141.0" prefHeight="40.0" prefWidth="232.0">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font>
+            </TextField>
+            <Label text="Password">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="passwordTextField" layoutX="10.0" layoutY="198.0" prefHeight="40.0" prefWidth="232.0">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font>
+            </TextField>
+            <Label text="Kuota">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="kuotaTextField" layoutX="10.0" layoutY="255.0" prefHeight="39.0" prefWidth="89.0">
+               <font>
+                  <Font name="Roboto" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
+      <TableView fx:id="userTableView" layoutX="245.0" layoutY="55.0" prefHeight="431.0" prefWidth="448.0" AnchorPane.rightAnchor="7.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="33.0" text="ID" />
+          <TableColumn fx:id="fullNameCol" prefWidth="107.0" text="Full Name" />
+            <TableColumn fx:id="addressCol" prefWidth="77.0" text="Address" />
+            <TableColumn fx:id="phoneNumberCol" prefWidth="111.0" text="Phone Number" />
+            <TableColumn fx:id="passwordCol" prefWidth="92.0" text="Password" />
+            <TableColumn fx:id="kuotaCol" prefWidth="70.0" text="Kuota" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="insertButton" buttonType="RAISED" layoutX="14.0" layoutY="454.0" prefHeight="32.0" prefWidth="64.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF;" text="Insert" textFill="WHITE">
+         <font>
+            <Font name="Roboto Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="updateButton" buttonType="RAISED" layoutX="93.0" layoutY="454.0" prefHeight="32.0" prefWidth="64.0" ripplerFill="#003b99" style="-fx-background-color: #EEECFD;" text="Update" textFill="#0063ff">
+         <font>
+            <Font name="Roboto Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="deleteButton" buttonType="RAISED" layoutX="171.0" layoutY="454.0" prefHeight="32.0" prefWidth="64.0" ripplerFill="#003b99" style="-fx-background-color: #B00020;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Roboto Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

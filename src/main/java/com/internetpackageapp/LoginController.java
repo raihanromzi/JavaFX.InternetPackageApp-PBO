@@ -15,6 +15,9 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
 
     @FXML
+    private JFXButton adminOnLoginButton;
+
+    @FXML
     private PasswordField passwordTextField;
 
     @FXML
@@ -47,6 +50,13 @@ public class LoginController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 Database.changeScene(event, "Register.fxml", "Register!", null,null,null);
+            }
+        });
+
+        adminOnLoginButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Database.changeScene(event, "Admin_Login.fxml", "Admin", null, null, null);
             }
         });
 

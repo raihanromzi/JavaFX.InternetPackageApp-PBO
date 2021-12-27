@@ -178,8 +178,7 @@ public class Database {
         }
     }
 
-
-        public static void addQuota(ActionEvent event, String phone_number, Integer kuota, Integer AddedKuota){
+    public static void addQuota(ActionEvent event, String phone_number, Integer kuota, Integer AddedKuota){
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -234,5 +233,166 @@ public class Database {
             }
         }
 
+    }
+
+    public static void changeSceneAdmin(ActionEvent event, String fxmlFile, String title, String username) {
+
+        Parent root = null;
+
+        if (username != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(Database.class.getResource(fxmlFile));
+                root = loader.load();
+                AdminController adminController = loader.getController();
+                adminController.setAdminInformation(username);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(Database.class.getResource(fxmlFile)));
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        assert root != null;
+        stage.setScene(new Scene(root, 700, 500));
+        stage.show();
+    }
+
+    public static void RegisterAdmin(ActionEvent event, String full_name, String username, String password) {
+
+        Connection connection = null;
+        PreparedStatement psInsert = null;
+        PreparedStatement psCheckUserExist = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            psCheckUserExist = connection.prepareStatement("SELECT * FROM admin WHERE username = ?");
+            psCheckUserExist.setString(1, username);
+            resultSet = psCheckUserExist.executeQuery();
+
+            if (resultSet.isBeforeFirst()) {
+                System.out.println("Username already Exist");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("You Can't Use This username");
+                alert.show();
+            } else {
+                psInsert = connection.prepareStatement("INSERT INTO admin (full_name, username, password) VALUES (?, ?, ?)");
+                psInsert.setString(1, full_name);
+                psInsert.setString(2, username);
+                psInsert.setString(3, password);
+                psInsert.executeUpdate();
+
+                changeSceneAdmin(event, "Admin_Controller.fxml", "Admin Home!", username);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+
+            if (resultSet != null) {
+
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (psCheckUserExist != null) {
+
+                try {
+                    psCheckUserExist.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (psInsert != null) {
+
+                try {
+                    psInsert.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (connection != null) {
+
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+    public static void LoginAdmin(ActionEvent event, String username, String password) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            preparedStatement = connection.prepareStatement("SELECT full_name, username, password FROM admin WHERE username = ?");
+            preparedStatement.setString(1, username);
+            resultSet = preparedStatement.executeQuery();
+
+            if (!resultSet.isBeforeFirst()) {
+                System.out.println("Username not found!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Incorrect username!");
+                alert.show();
+            } else {
+                while (resultSet.next()) {
+                    String retrievedPassword = resultSet.getString("password");
+
+                    if (retrievedPassword.equals(password)) {
+                        changeSceneAdmin(event, "Admin_Controller.fxml", "Welcome!", username);
+                    } else {
+                        System.out.println("Password did not match");
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setContentText("Incorrect Password!");
+                        alert.show();
+                    }
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
     }
 }
