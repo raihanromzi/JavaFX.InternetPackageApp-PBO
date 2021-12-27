@@ -27,9 +27,6 @@ public class HomeController implements Initializable {
     @FXML
     private Label QuotaLabel;
 
-    @FXML
-    private JFXButton refreshQuotaButton;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
