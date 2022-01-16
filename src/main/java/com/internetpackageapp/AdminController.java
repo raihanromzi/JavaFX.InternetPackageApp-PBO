@@ -12,8 +12,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
-import javax.xml.transform.Result;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -72,6 +72,9 @@ public class AdminController implements Initializable {
     private JFXButton updateButton;
 
     @FXML
+    private JFXButton clearButton;
+
+    @FXML
     private Label adminNameLabel;
 
     @Override
@@ -82,21 +85,27 @@ public class AdminController implements Initializable {
         insertButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                if (event.getSource() == insertButton){
+                    insertRecord();
+                }
             }
         });
 
         updateButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                if (event.getSource() == updateButton) {
+                    updateRecord();
+                }
             }
         });
 
         deleteButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                if (event.getSource() == deleteButton){
+                    deleteRecord();
+                }
             }
         });
 
@@ -106,13 +115,39 @@ public class AdminController implements Initializable {
                 Database.changeScene(event, "Admin_Login.fxml", "Admin", null, null, null);
             }
         });
+
+        userTableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Users users = userTableView.getSelectionModel().getSelectedItem();
+                idTextField.setText("" + users.getUser_id());
+                fullNameTextField.setText("" + users.getFull_name());
+                addressTextField.setText("" + users.getAddress());
+                phoneNumberTextField.setText("" + users.getPhone_number());
+                passwordTextField.setText("" + users.getPassword());
+                kuotaTextField.setText("" + users.getKuota());
+            }
+        });
+
+        clearButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                idTextField.setText("");
+                fullNameTextField.setText("");
+                addressTextField.setText("");
+                phoneNumberTextField.setText("");
+                passwordTextField.setText("");
+                kuotaTextField.setText("");
+
+            }
+        });
     }
 
     public Connection getConnection() {
 
         Connection connection;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:33061/InternetPackageDB", "root", "");
             return connection;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -120,7 +155,8 @@ public class AdminController implements Initializable {
         }
     }
 
-    public ObservableList<Users> getUsersList(){
+    // Show data to table
+    public ObservableList<Users> getUsersList() {
         ObservableList<Users> usersList = FXCollections.observableArrayList();
         Connection connection = getConnection();
         String query = "SELECT * FROM users";
@@ -133,7 +169,7 @@ public class AdminController implements Initializable {
             resultSet = statement.executeQuery(query);
             Users users;
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 users = new Users(
                         resultSet.getInt("user_id"),
                         resultSet.getString("phone_number"),
@@ -146,14 +182,46 @@ public class AdminController implements Initializable {
                 usersList.add(users);
 
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return usersList;
     }
 
-    public void showUsers(){
+    // Insert new data to database
+    private void insertRecord() {
+        String query = "INSERT INTO users VALUES (" + idTextField.getText() + ",'" + fullNameTextField.getText() + "','" + addressTextField.getText() + "'," +
+                                                    phoneNumberTextField.getText() + "," + passwordTextField.getText() + "," + kuotaTextField.getText() + ")";
+        executeQuery(query);
+        showUsers();
+    }
+
+    private void updateRecord() {
+        String query = "UPDATE users SET full_name = '" + fullNameTextField.getText() + "', address = '" + addressTextField.getText() + "', phone_number = '" + phoneNumberTextField.getText()
+                + "', password = '" + passwordTextField.getText() + "', kuota = '" + kuotaTextField.getText() + "' WHERE user_id = " + idTextField.getText() + "";
+        executeQuery(query);
+        showUsers();
+    }
+
+    private void deleteRecord() {
+        String query = "DELETE FROM users WHERE user_id = " + idTextField.getText() + "";
+        executeQuery(query);
+        showUsers();
+    }
+
+    private void executeQuery(String query) {
+        Connection connection = getConnection();
+        Statement statement;
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate(query);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void showUsers() {
         ObservableList<Users> list = getUsersList();
 
         idCol.setCellValueFactory(new PropertyValueFactory<Users, Integer>("user_id"));
@@ -166,7 +234,7 @@ public class AdminController implements Initializable {
         userTableView.setItems(list);
     }
 
-    public void setAdminInformation(String username){
+    public void setAdminInformation(String username) {
         adminNameLabel.setText(username);
     }
 }

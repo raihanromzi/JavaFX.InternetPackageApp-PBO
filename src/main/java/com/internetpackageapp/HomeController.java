@@ -1,5 +1,6 @@
 package com.internetpackageapp;
 
+import com.internetpackageapp.Database;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,9 +20,6 @@ public class HomeController implements Initializable {
     private Label PhoneNumberLabel;
 
     @FXML
-    private JFXButton addQuotaButton;
-
-    @FXML
     private Label fullNameLabel;
 
     @FXML
@@ -37,12 +35,6 @@ public class HomeController implements Initializable {
             }
         });
 
-        addQuotaButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Database.changeScene(event,"AddQuota.fxml", "Add Quota!", null, null, null);
-            }
-        });
     }
 
     public void setUserInformation(String full_name, String phone_number, Integer kuota) {

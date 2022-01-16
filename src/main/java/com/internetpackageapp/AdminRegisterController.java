@@ -1,5 +1,6 @@
 package com.internetpackageapp;
 
+import com.internetpackageapp.Database;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -41,8 +42,8 @@ public class AdminRegisterController implements Initializable {
         registerButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(!usernameTextField.getText().trim().isEmpty() && !passwordTextField.getText().trim().isEmpty()
-                        && !fullNameTextField.getText().trim().isEmpty()){
+                if (!usernameTextField.getText().trim().isEmpty() && !passwordTextField.getText().trim().isEmpty()
+                        && !fullNameTextField.getText().trim().isEmpty()) {
                     Database.RegisterAdmin(event, fullNameTextField.getText(), usernameTextField.getText(), passwordTextField.getText());
                 } else {
                     System.out.println("Please fill All information!");

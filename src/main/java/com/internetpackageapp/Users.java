@@ -2,12 +2,12 @@ package com.internetpackageapp;
 
 public class Users {
 
-    private Integer user_id;
-    private String phone_number;
-    private String password;
-    private Integer kuota;
-    private String full_name;
-    private String address;
+    private final Integer user_id;
+    private final String phone_number;
+    private final String password;
+    private final Integer kuota;
+    private final String full_name;
+    private final String address;
 
     public Users(Integer user_id, String phone_number, String password, Integer kuota, String full_name, String address) {
         this.user_id = user_id;

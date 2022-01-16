@@ -49,7 +49,7 @@ public class Database {
         ResultSet resultSet = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:33061/InternetPackageDB", "root", "");
             psCheckUserExist = connection.prepareStatement("SELECT * FROM users WHERE phone_number = ?");
             psCheckUserExist.setString(1, phone_number);
             resultSet = psCheckUserExist.executeQuery();
@@ -119,7 +119,7 @@ public class Database {
         ResultSet resultSet = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:33061/InternetPackageDB", "root", "");
             preparedStatement = connection.prepareStatement("SELECT full_name, phone_number, password, kuota FROM users WHERE phone_number = ?");
             preparedStatement.setString(1, phone_number);
             resultSet = preparedStatement.executeQuery();
@@ -178,63 +178,6 @@ public class Database {
         }
     }
 
-    public static void addQuota(ActionEvent event, String phone_number, Integer kuota, Integer AddedKuota){
-
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        try {
-
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
-            preparedStatement = connection.prepareStatement("UPDATE users SET kuota = ? + ? WHERE phone_number = ?");
-            preparedStatement.setInt(1, kuota);
-            preparedStatement.setInt(2, AddedKuota);
-            preparedStatement.setString(3, phone_number);
-            resultSet = preparedStatement.executeQuery();
-
-            if (!resultSet.isBeforeFirst()){
-                System.out.println("Cannot add quota!");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Cannot add quota!");
-                alert.show();
-            } else {
-                String retrievedFullName = resultSet.getString("full_name");
-                int retrievedKuota = resultSet.getInt("kuota");
-
-                changeScene(event, "Home.fxml", "Home!", retrievedFullName, phone_number, retrievedKuota);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (resultSet != null) {
-                try {
-                    resultSet.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            if (preparedStatement != null) {
-                try {
-                    preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-    }
-
     public static void changeSceneAdmin(ActionEvent event, String fxmlFile, String title, String username) {
 
         Parent root = null;
@@ -271,7 +214,7 @@ public class Database {
         ResultSet resultSet = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:33061/InternetPackageDB", "root", "");
             psCheckUserExist = connection.prepareStatement("SELECT * FROM admin WHERE username = ?");
             psCheckUserExist.setString(1, username);
             resultSet = psCheckUserExist.executeQuery();
@@ -340,7 +283,7 @@ public class Database {
         ResultSet resultSet = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/quotaApp", "root", "Rr290903123@");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:33061/InternetPackageDB", "root", "");
             preparedStatement = connection.prepareStatement("SELECT full_name, username, password FROM admin WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();

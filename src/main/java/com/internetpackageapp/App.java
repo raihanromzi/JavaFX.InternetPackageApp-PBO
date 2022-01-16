@@ -5,9 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.util.Objects;
 
 public class App extends Application {
+
+    public static void main(String[] args) {
+        launch();
+    }
 
     @Override
     public void start(Stage stage) {
@@ -17,12 +22,8 @@ public class App extends Application {
             stage.setScene(scene);
             stage.setTitle("Log in");
             stage.show();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }

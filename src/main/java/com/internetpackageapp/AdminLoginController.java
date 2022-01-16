@@ -1,5 +1,6 @@
 package com.internetpackageapp;
 
+import com.internetpackageapp.Database;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -49,7 +50,7 @@ public class AdminLoginController implements Initializable {
         signInButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(!usernameTextField.getText().trim().isEmpty() && !passwordTextField.getText().trim().isEmpty()){
+                if (!usernameTextField.getText().trim().isEmpty() && !passwordTextField.getText().trim().isEmpty()) {
                     Database.LoginAdmin(event, usernameTextField.getText(), passwordTextField.getText());
                 } else {
                     System.out.println("Please fill Phone Number & Password!");

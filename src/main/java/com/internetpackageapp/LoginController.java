@@ -1,5 +1,6 @@
 package com.internetpackageapp;
 
+import com.internetpackageapp.Database;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -35,7 +36,7 @@ public class LoginController implements Initializable {
         signInButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(!phoneNumberTextField.getText().trim().isEmpty() && !passwordTextField.getText().trim().isEmpty()){
+                if (!phoneNumberTextField.getText().trim().isEmpty() && !passwordTextField.getText().trim().isEmpty()) {
                     Database.logInUser(event, phoneNumberTextField.getText(), passwordTextField.getText());
                 } else {
                     System.out.println("Please fill Phone Number & Password!");
@@ -49,7 +50,7 @@ public class LoginController implements Initializable {
         registerOnLoginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Database.changeScene(event, "Register.fxml", "Register!", null,null,null);
+                Database.changeScene(event, "Register.fxml", "Register!", null, null, null);
             }
         });
 

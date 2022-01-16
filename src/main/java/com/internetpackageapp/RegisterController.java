@@ -1,21 +1,16 @@
 package com.internetpackageapp;
 
+import com.internetpackageapp.Database;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
@@ -48,8 +43,8 @@ public class RegisterController implements Initializable {
         registerButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(!addressTextField.getText().trim().isEmpty() && !fullNameTextField.getText().trim().isEmpty()
-                        && !passwordRegisterTextField.getText().trim().isEmpty() && !phoneNumberRegisterTextField.getText().trim().isEmpty()){
+                if (!addressTextField.getText().trim().isEmpty() && !fullNameTextField.getText().trim().isEmpty()
+                        && !passwordRegisterTextField.getText().trim().isEmpty() && !phoneNumberRegisterTextField.getText().trim().isEmpty()) {
 
                     Database.RegisterUser(event, fullNameTextField.getText(), addressTextField.getText(), phoneNumberRegisterTextField.getText(), passwordRegisterTextField.getText(), 0);
                 } else {
@@ -58,14 +53,14 @@ public class RegisterController implements Initializable {
                     alert.setContentText("Please fill All the Information!");
                     alert.show();
                 }
-                
+
             }
         });
 
         backOnRegisterButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Database.changeScene(event,"Login.fxml", "Log in!", null, null, null);
+                Database.changeScene(event, "Login.fxml", "Log in!", null, null, null);
             }
         });
     }

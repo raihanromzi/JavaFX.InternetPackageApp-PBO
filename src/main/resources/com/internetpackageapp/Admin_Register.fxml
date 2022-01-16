@@ -1,80 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.internetpackageapp.AdminRegisterController">
-   <left>
-      <AnchorPane prefHeight="500.0" prefWidth="404.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="500.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Image/ImageLoginHigh.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </left>
-   <right>
-      <HBox prefHeight="500.0" prefWidth="296.0" BorderPane.alignment="CENTER">
-         <children>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="644.0" prefWidth="278.0">
-               <children>
-                  <Label layoutX="26.0" layoutY="57.0" text="Hi! New Admin" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="88.0">
-                     <font>
-                        <Font name="Roboto Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="24.0" layoutY="105.0" text="Full Name" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="148.0">
-                     <font>
-                        <Font name="Roboto" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="19.0" layoutY="322.0" text="Username" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="223.0" />
-                  <TextField fx:id="fullNameTextField" layoutX="38.0" layoutY="207.0" prefHeight="40.0" prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="167.0">
-                     <font>
-                        <Font name="Roboto" size="12.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="usernameTextField" layoutX="32.0" layoutY="240.0" prefHeight="40.0" prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="242.0">
-                     <font>
-                        <Font name="Roboto" size="12.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="32.0" layoutY="299.0" text="Password">
-                     <font>
-                        <Font name="Roboto" size="12.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="passwordTextField" layoutX="32.0" layoutY="318.0" prefHeight="40.0" prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="317.0">
-                     <font>
-                        <Font name="Roboto" size="12.0" />
-                     </font>
-                  </TextField>
-                  <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="32.0" layoutY="456.0" prefHeight="32.0" prefWidth="232.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF;" text="Register" textFill="WHITE" AnchorPane.topAnchor="381.0">
-                     <font>
-                        <Font name="Roboto Bold" size="14.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="backOnRegisterButton" layoutX="28.0" layoutY="28.0" prefHeight="32.0" prefWidth="0.0" style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Image/arrow-left-line.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </AnchorPane>
-         </children>
-      </HBox>
-   </right>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx"
+            fx:controller="com.internetpackageapp.AdminRegisterController">
+    <left>
+        <AnchorPane prefHeight="500.0" prefWidth="404.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="500.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/ImageLoginHigh.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <HBox prefHeight="500.0" prefWidth="296.0" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="644.0" prefWidth="278.0">
+                    <children>
+                        <Label layoutX="26.0" layoutY="57.0" text="Hi! New Admin" AnchorPane.leftAnchor="32.0"
+                               AnchorPane.topAnchor="88.0">
+                            <font>
+                                <Font name="Roboto Bold" size="20.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="105.0" text="Full Name" AnchorPane.leftAnchor="32.0"
+                               AnchorPane.topAnchor="148.0">
+                            <font>
+                                <Font name="Roboto" size="12.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="322.0" text="Username" AnchorPane.leftAnchor="32.0"
+                               AnchorPane.topAnchor="223.0"/>
+                        <TextField fx:id="fullNameTextField" layoutX="38.0" layoutY="207.0" prefHeight="40.0"
+                                   prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="167.0">
+                            <font>
+                                <Font name="Roboto" size="12.0"/>
+                            </font>
+                        </TextField>
+                        <TextField fx:id="usernameTextField" layoutX="32.0" layoutY="240.0" prefHeight="40.0"
+                                   prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="242.0">
+                            <font>
+                                <Font name="Roboto" size="12.0"/>
+                            </font>
+                        </TextField>
+                        <Label layoutX="32.0" layoutY="299.0" text="Password">
+                            <font>
+                                <Font name="Roboto" size="12.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="passwordTextField" layoutX="32.0" layoutY="318.0" prefHeight="40.0"
+                                   prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="317.0">
+                            <font>
+                                <Font name="Roboto" size="12.0"/>
+                            </font>
+                        </TextField>
+                        <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="32.0" layoutY="456.0"
+                                   prefHeight="32.0" prefWidth="232.0" ripplerFill="#003b99"
+                                   style="-fx-background-color: #0063FF #0063FF;" text="Register" textFill="WHITE"
+                                   AnchorPane.topAnchor="381.0">
+                            <font>
+                                <Font name="Roboto Bold" size="14.0"/>
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="backOnRegisterButton" layoutX="28.0" layoutY="28.0" prefHeight="32.0"
+                                   prefWidth="0.0"
+                                   style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;"
+                                   AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Image/arrow-left-line.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+    </right>
 </BorderPane>
