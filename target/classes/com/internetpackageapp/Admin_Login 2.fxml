@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx"
+            fx:controller="com.internetpackageapp.AdminLoginController">
+    <left>
+        <AnchorPane prefHeight="500.0" prefWidth="404.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="500.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/ImageLoginHigh.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="200.0" prefWidth="296.0" style="-fx-background-color: #FFFFFF;"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="28.0" layoutY="91.0" text="Hello, Admin!" AnchorPane.leftAnchor="32.0"
+                       AnchorPane.topAnchor="88.0">
+                    <font>
+                        <Font name="Roboto Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="41.0" layoutY="147.0" text="Username" AnchorPane.leftAnchor="32.0"
+                       AnchorPane.topAnchor="148.0">
+                    <font>
+                        <Font name="Roboto" size="12.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="29.0" layoutY="221.0" text="Password" AnchorPane.leftAnchor="32.0"
+                       AnchorPane.topAnchor="223.0"/>
+                <Label layoutX="58.0" layoutY="370.0" prefHeight="17.0" prefWidth="125.0" text="Don’t have an account?"
+                       AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="393.0">
+                    <font>
+                        <Font name="Roboto" size="12.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="usernameTextField" layoutX="32.0" layoutY="171.0" prefHeight="40.0" prefWidth="232.0"
+                           AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="167.0">
+                    <font>
+                        <Font name="Roboto" size="12.0"/>
+                    </font>
+                </TextField>
+                <PasswordField fx:id="passwordTextField" layoutX="32.0" layoutY="299.0" prefHeight="40.0"
+                               prefWidth="232.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="242.0">
+                    <font>
+                        <Font name="Roboto" size="12.0"/>
+                    </font>
+                </PasswordField>
+                <JFXButton fx:id="signInButton" buttonType="RAISED" layoutX="32.0" layoutY="402.0" prefHeight="32.0"
+                           prefWidth="232.0" ripplerFill="#003b99" style="-fx-background-color: #0063FF #0063FF;"
+                           text="Sign in" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="314.0">
+                    <font>
+                        <Font name="Roboto Bold" size="14.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="registerOnLoginButton" layoutX="176.0" layoutY="390.0" text="Register"
+                           textFill="#0063ff" AnchorPane.topAnchor="390.0">
+                    <font>
+                        <Font name="Roboto Bold" size="12.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="backOnLoginButton" prefHeight="32.0" prefWidth="0.0"
+                           style="-fx-background-color: #0063FF #0063FF; -fx-background-radius: 500;"
+                           AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Image/arrow-left-line.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>
